@@ -69,3 +69,15 @@ class matatu_booking_system:
                     print(" Invalid choice. Please select a valid matatu number.")
             except ValueError:
                 print("Invalid input. Please enter a valid number or 'q'.")
+
+    def add_matatu(self, new_matatu):
+        self.matatus.append(new_matatu)
+
+    def display_matatus(self):
+        for m in self.matatus:
+            print(f"Sacco: {m.sacco_name}, Route: {m.route}, Fare: KES {m.fare}")
+            m.display_seats()
+
+if __name__ == "__main__":
+    system = matatu_booking_system()
+    system.run()
